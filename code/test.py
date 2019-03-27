@@ -1,3 +1,0 @@
-﻿import sys
-
-print "nlp"
