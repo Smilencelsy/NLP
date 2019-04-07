@@ -21,15 +21,16 @@ validation_data_demo.txt 为输出集的格式
 
 ### 0x02.思路分析       
 对于消极语言的识别可以归类为情感分析, 通过提取对话/文本中的情绪特征, 对玩家的语言进行情感评级, 以更高的分数表示正面的情感, 以较低的分数表示负面情绪, 可以通过设定阈值来调整提醒/警告/封禁的范围。     
-两种方案:
-一种是基于论文中的方法用tensorflow自己实现 ()
-一种是基于百度AI开放平台的代码进行应用 (https://github.com/baidu/Senta)     
+基于百度AI开放平台的代码进行应用 (https://github.com/baidu/Senta)     
 例: http://ai.baidu.com/tech/nlp/sentiment_classify (百度开放AI平台的情感计算接口 基于百度自己的深度学习框架PaddlePaddle)
 
 注意: 数据中是按读音来划分的, 有很多生僻字体, 最好换成拼音再进行处理
 
 
-### 0x03.具体实现
+### 0x03.具体实现         
++ 中文分词       
+  用jieba测试了一下分词效果, 不是特别理想, 结果在all_model_segm.txt中, 主要是因为有些敏感字被屏蔽以后, 玩家用其他的字来替代, 导致分词识别不出来。      
+  基于百度的LAC(https://github.com/baidu/lac) 再做一次
 
 
 ### 0x04.评价标准
